@@ -559,7 +559,7 @@ MonoBehaviour:
   _hpBar: {fileID: 553229051}
   _player: {fileID: 1576442821}
   _changer: {fileID: 221204587}
-  recoveryRate: 1
+  recoveryRate: 20
 --- !u!1 &686037970
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class HP_Bar : MonoBehaviour
     [SerializeField] private HP_Changer _changer;
     [SerializeField] private float recoveryRate;
 
-    private float _hpBarValue;
     private float _nextHPBarValue;
     private Coroutine _SetHealthPointCoroutine;
 
@@ -26,8 +25,6 @@ public class HP_Bar : MonoBehaviour
     private void Start()
     {
         _hpBar.maxValue = _player.MaxHealth;       
-        _hpBarValue = _player.MaxHealth;
-        _nextHPBarValue = _hpBarValue;
     }
 
     private void RunCoroutine()
@@ -38,15 +35,16 @@ public class HP_Bar : MonoBehaviour
 
     private IEnumerator SetHealthPointBar()
     {
-        if (_hpBarValue > _nextHPBarValue)
+        while (_hpBar.value != _nextHPBarValue)
         {
-            _hpBar.value = Mathf.MoveTowards(_nextHPBarValue, _hpBarValue, recoveryRate * Time.deltaTime);
-        }
-        else
-        {
-            _hpBar.value = Mathf.MoveTowards(_hpBarValue, _nextHPBarValue, recoveryRate * Time.deltaTime);
+            _hpBar.value = Mathf.MoveTowards(_hpBar.value, _nextHPBarValue, recoveryRate * Time.deltaTime);
+
+            yield return null;
         }
 
-        yield return null;
+        if (_hpBar.value == _nextHPBarValue)
+        {
+            StopCoroutine(_SetHealthPointCoroutine);
+        }
     }
 }

@@ -14,12 +14,28 @@ public class Player : MonoBehaviour
         _health = _maxHealth;
     }
 
-    public void ChangeHealth(float health)
+    /*public void ChangeHealth(float health)
     {
         _health += health;
 
         if (_health <= 0)
             _health = 0;
+
+        if (_health >= _maxHealth)
+            _health = _maxHealth;
+    }*/
+
+    public void TakeDamage(float health)
+    {
+        _health -= health;
+
+        if (_health <= 0)
+            _health = 0;
+    }
+
+    public void TakeHeal(float health)
+    {
+        _health += health;
 
         if (_health >= _maxHealth)
             _health = _maxHealth;

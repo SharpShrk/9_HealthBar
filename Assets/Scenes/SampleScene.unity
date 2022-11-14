@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &201303076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 201303078}
+  - component: {fileID: 201303077}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &201303077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201303076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a32f9ab9cfc9240aa97f89fecf4a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upHPButton: {fileID: 686037972}
+  _downHPButton: {fileID: 493593380}
+  _player: {fileID: 1576442821}
+--- !u!4 &201303078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201303076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.4939088e-14, y: 0, z: 0.0000076293945}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361337769
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,10 +556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9f175f8edd99d4293e59f81d617bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upHPButton: {fileID: 686037972}
-  _downHPButton: {fileID: 493593380}
   _player: {fileID: 1576442821}
   _hpBar: {fileID: 553229051}
+  _buttons: {fileID: 201303077}
   recoveryRate: 20
 --- !u!1 &686037970
 GameObject:

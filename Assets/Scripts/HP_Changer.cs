@@ -12,7 +12,6 @@ public class HP_Changer : MonoBehaviour
     private float _nextHPBarValue;
     private Coroutine _SetHealthPointCoroutine;
 
-
     private void Start()
     {
         _hpBar.maxValue = _player.MaxHealth;
@@ -41,11 +40,6 @@ public class HP_Changer : MonoBehaviour
             _hpBar.value = Mathf.MoveTowards(_hpBar.value, _nextHPBarValue, recoveryRate * Time.deltaTime);
 
             yield return null;
-        }
-
-        if (_hpBar.value == _nextHPBarValue)
-        {
-            StopCoroutine(_SetHealthPointCoroutine);
         }
     }
 }
